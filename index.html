@@ -55,7 +55,9 @@
                 var coordinates = e.features[0].geometry.coordinates.slice();
                 popup = new mapboxgl.Popup()
                     .setLngLat(coordinates)
-                    .setHTML('<h4>' + feature.properties['City'] + '</h4>')
+                    .setHTML('<h4>' + feature.properties['City'] + '</h4>' + '<div>' +
+                            feature.properties['Month'] + ' ' + feature.properties['Day'] + ', ' +
+                            feature.properties['Year'] + '</div> <div>Theater: ' + feature.properties['Theatre'] + '</div>')
                     .addTo(map);
             });
             
